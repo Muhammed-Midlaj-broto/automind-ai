@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Performance Predictor</title>
+  <link rel="stylesheet" href="/static/css/predictor.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+<div style="margin-top:60px;"></div>
+
+  <div class="predictor-container">
+    <div class="predictor-card">
+      <h1>🔮 Car Performance Predictor</h1>
+      <p class="subtitle">Estimate performance based on your car’s specs</p>
+
+      <form id="predictorForm">
+        <label for="torque">Torque (Nm):</label>
+        <input type="number" id="torque" name="torque" min="0" step="0.1" placeholder="e.g., 320" required>
+
+        <label for="groundClearance">Ground Clearance (inches):</label>
+        <input type="number" id="groundClearance" name="groundClearance" min="0" step="0.1" placeholder="e.g., 8.5" required>
+
+        <label for="horsepower">Horsepower (HP):</label>
+        <input type="number" id="horsepower" name="horsepower" min="0" placeholder="e.g., 250" required>
+
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" name="weight" min="0" placeholder="e.g., 1500" required>
+
+        <button type="submit">Predict</button>
+      </form>
+
+      <div id="response" class="response">✅ Data submitted! Your AI prediction will appear soon.</div>
+    </div>
+  </div>
+
+  <script src="/static/js/predictor.js"></script>
+</body>
+
+</html>

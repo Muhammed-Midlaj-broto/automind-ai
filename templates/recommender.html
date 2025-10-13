@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Recommender</title>
+  <link rel="stylesheet" href="/static/css/recommender.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="recommender-container">
+    <div class="recommender-card">
+      <h1>🚘 Car Recommender</h1>
+      <p class="subtitle">Get personalized car recommendations that fit your budget, terrain, and lifestyle</p>
+
+      <form id="recommenderForm">
+        <label for="budget">Budget (USD):</label>
+        <input type="number" id="budget" name="budget" min="0" placeholder="e.g., 30000" required>
+
+        <label for="terrain">Terrain:</label>
+        <select id="terrain" name="terrain" required>
+          <option value="">Select terrain...</option>
+          <option value="urban">Urban</option>
+          <option value="offroad">Off-road</option>
+          <option value="highway">Highway</option>
+        </select>
+
+        <label for="usage">Usage:</label>
+        <select id="usage" name="usage" required>
+          <option value="">Select usage...</option>
+          <option value="commute">Daily Commute</option>
+          <option value="family">Family Trips</option>
+          <option value="adventure">Adventure</option>
+        </select>
+
+        <button type="submit">Get Recommendations</button>
+      </form>
+
+      <div id="response" class="response">✅ Form submitted! AI recommendations will appear here soon.</div>
+    </div>
+  </div>
+
+ <script src="/static/js/recommender.js"></script>
+</body>
+</html>

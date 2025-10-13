@@ -1,0 +1,120 @@
+/* Reset & base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    padding: 0.8rem 2rem;
+    background: linear-gradient(90deg, #1f1c2c, #928dab);
+}
+.navbar-brand img {
+    height: 50px;
+    width: auto;
+}
+.nav-link {
+    margin: 0 10px;
+    font-weight: 500;
+    color: #fff !important;
+    transition: 0.3s;
+}
+.nav-link:hover {
+    color: #ffdd57 !important;
+}
+
+/* Hero & sections */
+section {
+    position: relative;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+section .container {
+    z-index: 2;
+}
+section h1, section h2 {
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 20px;
+}
+section p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 20px auto;
+    line-height: 1.6;
+}
+section button {
+    padding: 10px 25px;
+    font-weight: bold;
+    border-radius: 25px;
+}
+
+/* Overlay */
+section::before {
+    content: '';
+    position: absolute;
+    top:0; left:0;
+    width:100%; height:100%;
+    z-index:1;
+    opacity:0.7;
+}
+
+/* Section backgrounds */
+.content1 { background: url('https://w0.peakpx.com/wallpaper/586/217/HD-wallpaper-car-cool-car-cool.jpg') center/cover no-repeat; }
+.content2 { background: url('https://www.carpro.com/hs-fs/hubfs/2023-Chevrolet-Corvette-Z06-credit-chevrolet.jpeg?width=1020&name=2023-Chevrolet-Corvette-Z06-credit-chevrolet.jpeg') center/cover no-repeat; }
+.content3 { background: url('https://media.istockphoto.com/id/1347150429/photo/professional-mechanic-working-on-the-engine-of-the-car-in-the-garage.jpg?s=612x612&w=0&k=20&c=5zlDGgLNNaWsp_jq_L1AsGT85wrzpdl3kVH-75S-zTU=') center/cover no-repeat; }
+.content4 { background: url('https://t3.ftcdn.net/jpg/04/33/68/24/360_F_433682499_Skfg324wgPt0HUOVDnZLWZ8XhbuCGXtZ.jpg') center/cover no-repeat; }
+.content5 { background: url('https://plus.unsplash.com/premium_photo-1737182592549-0c83f93e2903?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bHV4dXJ5JTIwdmVoaWNsZXxlbnwwfHwwfHx8MA==') center/cover no-repeat; }
+
+/* Overlay colors */
+.content1::before { background: rgba(0,0,0,0.6); }
+.content2::before { background: rgba(0,0,0,0.6); }
+.content3::before { background: rgba(0,0,0,0.6); }
+.content4::before { background: rgba(0,0,0,0.6); }
+.content5::before { background: rgba(0,0,0,0.6); }
+
+/* Buttons */
+.btn-primary {
+    background: #ffdd57;
+    border: none;
+    color: #1f1c2c;
+    transition: 0.3s;
+}
+.btn-primary:hover {
+    background: #fff;
+    color: #1f1c2c;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    background: #1f1c2c;
+    color: #fff;
+    font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    section {
+        height: auto;
+        padding: 60px 20px;
+    }
+    section h1 { font-size: 2.5rem; }
+    section h2 { font-size: 2rem; }
+    section p { font-size: 1rem; }
+}
+
+@media (max-width: 576px) {
+    .navbar-nav { text-align: center; }
+    section h1 { font-size: 2rem; }
+    section h2 { font-size: 1.5rem; }
+    section p { font-size: 0.9rem; }
+    .btn-primary { padding: 8px 20px; font-size: 0.9rem; }
+}
