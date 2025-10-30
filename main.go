@@ -1,23 +1,37 @@
 package main
 
 import (
+	"automind-ai/helpers"
 	"automind-ai/routes"
+	"fmt"
+	"log"
 
 	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
 )
 
 func main() {
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("errorloading .env file")
+	}
+	// Initialize AI client first
+	helpers.InitAI()
+
+	// Test the connection (optional)
+	response, err := helpers.SendAIRequest("Explain how a car engine works.")
+	if err != nil {
+		fmt.Println("Error:", err)
+	} else {
+		fmt.Println("AI says:", response)
+	}
+
+	// Setup Gin
 	r := gin.Default()
-
-	// Load all HTML templates
 	r.LoadHTMLGlob("templates/*")
-
-	// Serve static files (CSS, JS, images)
 	r.Static("/static", "./static")
-
-	// Setup routes
 	routes.SetupRoutes(r)
 
-	// Start the server on port 8080
+	// Run web server
 	r.Run(":8080")
 }

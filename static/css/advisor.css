@@ -1,8 +1,7 @@
-/* 🌌 Global Styles (apply to all pages) */
+/* 🌌 Global Styles */
 body {
   font-family: 'Poppins', sans-serif;
-  background: url('https://dealerprotraining.com/wp-content/w3-webp/uploads/2023/08/Longform-2-scaled.jpgw3.webp')
-    no-repeat center center/cover;
+  background: url('https://dealerprotraining.com/wp-content/w3-webp/uploads/2023/08/Longform-2-scaled.jpgw3.webp') no-repeat center center/cover;
   color: #e0e0e0;
   margin: 0;
   padding: 20px;
@@ -23,8 +22,8 @@ body::before {
   z-index: 0;
 }
 
-/* 🌟 Shared Form Container */
- .advisor-card{
+/* 🌟 Main Card */
+.advisor-card {
   position: relative;
   z-index: 1;
   background: rgba(15, 25, 35, 0.9);
@@ -36,12 +35,19 @@ body::before {
   text-align: center;
   animation: fadeIn 0.8s ease-in-out;
   backdrop-filter: blur(10px);
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
-/* 🧩 Common elements */
 h1 {
   text-align: center;
   color: #00bfff;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #b0c4de;
+  font-size: 0.9rem;
   margin-bottom: 25px;
 }
 
@@ -53,15 +59,17 @@ label {
   text-align: left;
 }
 
-input, select, textarea {
+textarea {
   width: 100%;
   padding: 12px;
   margin-bottom: 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   font-size: 16px;
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
+  resize: none;
+  height: 120px;
 }
 
 button {
@@ -81,18 +89,85 @@ button:hover {
   box-shadow: 0 0 15px #00bfff;
 }
 
-/* ✅ Success / Response box */
-.response {
-  margin-top: 15px;
-  padding: 10px;
-  background: rgba(0, 255, 127, 0.2);
-  border: 1px solid rgba(0, 255, 127, 0.4);
-  border-radius: 6px;
-  display: none;
-  color: #b0ffb0;
+/* 💬 AI Response Section */
+.response-box {
+  display: flex;
+  align-items: flex-start;
+  background: rgba(0, 255, 127, 0.08);
+  border: 1px solid rgba(0, 255, 127, 0.3);
+  border-radius: 12px;
+  padding: 15px;
+  margin-top: 20px;
+  text-align: left;
+  color: #d4ffd4;
+  box-shadow: 0 0 10px rgba(0, 255, 127, 0.2);
+  animation: fadeInUp 0.6s ease-out;
+  max-height: 300px;
+  overflow-y: auto;
 }
 
+/* 🤖 Avatar Bubble */
+.ai-avatar {
+  font-size: 1.8rem;
+  margin-right: 10px;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ✨ Message Text */
+.ai-message {
+  flex: 1;
+  line-height: 1.5;
+  font-size: 0.95rem;
+  white-space: pre-line;
+  animation: textGlow 1.5s ease-in-out infinite alternate;
+}
+
+/* 🌈 Animations */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes textGlow {
+  from { text-shadow: 0 0 5px #00ffcc; }
+  to { text-shadow: 0 0 15px #00ff99; }
+}
+
+/* 📱 Responsive */
+@media (max-width: 480px) {
+  .advisor-card {
+    padding: 30px 25px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+  }
+}
+
+/* 🌟 Scrollbar for Webkit */
+.response-box::-webkit-scrollbar {
+  width: 6px;
+}
+
+.response-box::-webkit-scrollbar-thumb {
+  background: #00bfff;
+  border-radius: 3px;
+}
+
+.response-box::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.1);
 }

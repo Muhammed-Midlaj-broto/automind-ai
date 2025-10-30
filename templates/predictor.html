@@ -9,13 +9,10 @@
 </head>
 <body>
 
-
-<div style="margin-top:60px;"></div>
-
   <div class="predictor-container">
     <div class="predictor-card">
       <h1>🔮 Car Performance Predictor</h1>
-      <p class="subtitle">Estimate performance based on your car’s specs</p>
+      <p class="subtitle">Estimate your car’s performance using AI analysis</p>
 
       <form id="predictorForm">
         <label for="torque">Torque (Nm):</label>
@@ -30,14 +27,17 @@
         <label for="weight">Weight (kg):</label>
         <input type="number" id="weight" name="weight" min="0" placeholder="e.g., 1500" required>
 
-        <button type="submit">Predict</button>
+        <button type="submit">Predict Performance</button>
       </form>
 
-      <div id="response" class="response">✅ Data submitted! Your AI prediction will appear soon.</div>
+      <!-- Beautiful AI Output -->
+      <div id="response" class="response-box hidden">
+        <div class="ai-avatar">⚙️</div>
+        <div class="ai-message" id="aiMessage"></div>
+      </div>
     </div>
   </div>
 
   <script src="/static/js/predictor.js"></script>
 </body>
-
 </html>
