@@ -41,7 +41,7 @@ func SendAIRequest(prompt string) (string, error) {
 	req, _ := http.NewRequest("POST", url, bytes.NewBuffer(jsonData))
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("Authorization", "Bearer "+openRouterKey)
-	req.Header.Set("HTTP-Referer", "http://localhost:8080")
+	req.Header.Set("HTTP-Referer", "https://railway.app")
 
 	client := &http.Client{}
 	res, err := client.Do(req)
