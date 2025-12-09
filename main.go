@@ -33,10 +33,10 @@ func main() {
 	r.Static("/static", "./static")
 	routes.SetupRoutes(r)
 
-	// Run web server
+	// Run web serverport := os.Getenv("PORT")port := os.Getenv("PORT")
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "8081" // fallback for local
+		port = "8081" // for local testing
 	}
 	r.Run(":" + port)
 
