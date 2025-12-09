@@ -5,6 +5,7 @@ import (
 	"automind-ai/routes"
 	"fmt"
 	"log"
+	"os"
 
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
@@ -33,5 +34,10 @@ func main() {
 	routes.SetupRoutes(r)
 
 	// Run web server
-	r.Run(":8080")
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8081" // fallback for local
+	}
+	r.Run(":" + port)
+
 }
